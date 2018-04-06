@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CMPedometerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps : None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-Pg-NRI">
+                                <rect key="frame" x="20" y="40" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace : None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xM-iA-f2T">
+                                <rect key="frame" x="20" y="81" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance : None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFp-57-Lbn">
+                                <rect key="frame" x="20" y="163" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avg. Pace : None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNj-4c-3fI">
+                                <rect key="frame" x="20" y="122" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObO-uy-bFT">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.63981119791666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yFf-Hb-PVR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5U5-8v-tXI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedometer Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U95-6R-ABn">
+                                <rect key="frame" x="20" y="204" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9xM-iA-f2T" secondAttribute="trailing" constant="20" symbolic="YES" id="1BL-6s-X4p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ObO-uy-bFT" secondAttribute="trailing" id="Gnc-0A-iVG"/>
+                            <constraint firstItem="LgB-Pg-NRI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Oi0-DZ-EgU"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U95-6R-ABn" secondAttribute="trailing" constant="20" symbolic="YES" id="Shv-sT-6Fz"/>
+                            <constraint firstItem="9xM-iA-f2T" firstAttribute="leading" secondItem="LgB-Pg-NRI" secondAttribute="leading" id="Sxh-uo-qcn"/>
+                            <constraint firstItem="qNj-4c-3fI" firstAttribute="leading" secondItem="LgB-Pg-NRI" secondAttribute="leading" id="WZ2-X4-h70"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qNj-4c-3fI" secondAttribute="trailing" constant="20" symbolic="YES" id="Z73-by-U8X"/>
+                            <constraint firstItem="9xM-iA-f2T" firstAttribute="top" secondItem="LgB-Pg-NRI" secondAttribute="bottom" constant="20" id="Zhr-8n-FLe"/>
+                            <constraint firstItem="ObO-uy-bFT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b5H-hw-czV"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LgB-Pg-NRI" secondAttribute="trailing" constant="20" symbolic="YES" id="cfs-X2-5Md"/>
+                            <constraint firstItem="qNj-4c-3fI" firstAttribute="top" secondItem="9xM-iA-f2T" secondAttribute="bottom" constant="20" id="ftB-MG-jtu"/>
+                            <constraint firstItem="U95-6R-ABn" firstAttribute="top" secondItem="HFp-57-Lbn" secondAttribute="bottom" constant="20" id="k6Q-XL-SCe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ObO-uy-bFT" secondAttribute="bottom" id="kkI-oL-qEt"/>
+                            <constraint firstItem="HFp-57-Lbn" firstAttribute="leading" secondItem="LgB-Pg-NRI" secondAttribute="leading" id="n3j-TH-pOv"/>
+                            <constraint firstItem="HFp-57-Lbn" firstAttribute="top" secondItem="qNj-4c-3fI" secondAttribute="bottom" constant="20" id="p5r-YS-GVW"/>
+                            <constraint firstItem="LgB-Pg-NRI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sR4-3n-uHF"/>
+                            <constraint firstItem="U95-6R-ABn" firstAttribute="leading" secondItem="HFp-57-Lbn" secondAttribute="leading" id="tma-gg-Yp6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HFp-57-Lbn" secondAttribute="trailing" constant="20" symbolic="YES" id="wAy-1D-IVy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="avgPace" destination="qNj-4c-3fI" id="XJc-cy-9f7"/>
+                        <outlet property="distanceLabel" destination="HFp-57-Lbn" id="fik-HE-k6O"/>
+                        <outlet property="paceLabel" destination="9xM-iA-f2T" id="y9c-QY-DcZ"/>
+                        <outlet property="statusTitle" destination="U95-6R-ABn" id="E8T-sV-v17"/>
+                        <outlet property="steps" destination="LgB-Pg-NRI" id="x6a-mZ-cbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="94" y="136"/>
         </scene>
     </scenes>
 </document>
